@@ -1,8 +1,6 @@
 * {
     padding: 20px;
     padding-top: 5px;
-    background-color: darkgrey;
-    color: white;
 }
 
 .text-center {
@@ -17,6 +15,10 @@
     align-items:center;
 }
 
+.mat-slider-horizontal {
+    min-width: 100%;
+  }
+  
 
 .container-row {
     display: flex;
@@ -25,10 +27,13 @@
     align-items:center;
 }
 
-.setup-form {
-    min-width: 150px;
-    max-width: 480px;
+.setup {
+    // min-width: 180px;
+    max-width: 640px;
     width: 90%;
+    margin-top: -15px;
+    margin-left: -20px;
+    padding: 0px;
   }
 
 .form-full-width {

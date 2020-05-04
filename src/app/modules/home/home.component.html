@@ -1,14 +1,23 @@
-<div class="card-content">
-    <div class="container">
-        <h1 class="text-center">Enter Data</h1>
-        <form class="setup-form">
-            <mat-form-field class="form-full-width">
-                <input matInput type="text" placeholder="Enter Initial Concentration">
-            </mat-form-field>
-        </form>
+<div class="container">
+    <h1 class="text-center">Parameters</h1>
+    <div class="setup">
+        <mat-form-field class="form-full-width">
+            <input id="initial" matInput [(ngModel)]="initial" type="number" min="0" placeholder="Enter Initial Concentration">
+        </mat-form-field>
+        <div class="form-full-width">
+            Select Growth or Decay Rate :<br />
+            <mat-slider [max]="maxR" [min]="minR" [step]="stepR" [thumbLabel]="thumbLabel" [(ngModel)]="rate"
+                (input)="onRateChange($event)">
+            </mat-slider>
+        </div>
+        <div class="form-full-width">
+            Select Period of Observation :<br />
+            <mat-slider [max]="maxT" [min]="minT" [step]="stepT" [thumbLabel]="thumbLabel" [(ngModel)]="time"
+                (input)="onPeriodChange($event)">
+            </mat-slider>
+        </div>
     </div>
+    
+    <mat-divider></mat-divider>
+    <h1 class="text-center">Generated Graphs</h1>
 </div>
-
-<mat-divider></mat-divider>
-
-<h1 class="text-center">Generated Graphs</h1>
