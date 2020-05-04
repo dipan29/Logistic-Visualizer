@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
+import * as Highcharts from 'highcharts';
+import HC_exporting from 'highcharts/modules/exporting';
+HC_exporting(Highcharts);
 
 @Component({
   selector: 'app-home',
@@ -14,6 +17,9 @@ export class HomeComponent implements OnInit {
   initial = 0.5;
   time = 30;
 
+  x = [];
+  y = [];
+
   // Slider
   maxR = 5;
   minR = 0;
@@ -23,18 +29,75 @@ export class HomeComponent implements OnInit {
   minT = 5;
   stepT = 5;
 
+  //Charts
+  chartOptions: {};
+  Highcharts = Highcharts;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.generateCurve();
+    this.generateChart();
   }
 
+  generateChart() {
+    this.chartOptions = {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Logistic Model'
+      },
+      subtitle: {
+        text: 'Concentration vs Time (in years) Model'
+      },
+      tooltip: {
+        split: true,
+      },
+      credits: {
+        text: '(C) Dipan Roy | All Rights Reserved',
+        href: 'https://www.DipanRoy.com'
+      },
+      exporting: {
+        enabled: true,
+      },
+      series: [{
+        name: 'Concentration',
+        data: this.y
+      }]
+    };
+
+    HC_exporting(Highcharts);
+  }
+
+  generateCurve() {
+    var i = 0;
+    this.y = [];
+    this.x = [];
+    this.y[0] = this.initial;
+    this.x[0] = 0;
+    for(i = 1; i <= this.time; i++){
+      var old = i - 1;
+      this.x[i] = i;
+      this.y[i] = this.rate * this.y[old] * (1 - this.y[old]);
+    }
+    // console.log(this.y);
+  }
+  
+
   onRateChange(event: MatSliderChange) {
-    console.log(event.value);
+    this.generateCurve();
+    this.generateChart();
   }
 
   onPeriodChange(event: MatSliderChange) {
-    console.log(event.value);
+    this.generateCurve();
+    this.generateChart();
+  }
+
+  onInitialChange(event){
+    this.generateCurve();
+    this.generateChart();
   }
 
 }

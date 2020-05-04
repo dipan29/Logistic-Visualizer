@@ -9,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatSliderModule,
-    FormsModule
+    FormsModule,
+    HighchartsChartModule
   ]
 })
 export class DefaultModule { }
