@@ -3,18 +3,18 @@
     <div class="setup">
         <mat-form-field class="form-full-width">
             <input id="initial" matInput [(ngModel)]="initial" (change)="onInitialChange($event.target.value)"
-                type="number" min="0" placeholder="Enter Initial Concentration">
+                type="number" min="0" max="1000" step="0.01" placeholder="Enter Initial Concentration">
         </mat-form-field>
         <div class="form-full-width">
             Select Growth or Decay Rate :<br />
             <mat-slider [max]="maxR" [min]="minR" [step]="stepR" [thumbLabel]="thumbLabel" [(ngModel)]="rate"
-                (input)="onRateChange($event)">
+                (change)="onRateChange($event)">
             </mat-slider>
         </div>
         <div class="form-full-width">
             Select Period of Observation :<br />
             <mat-slider [max]="maxT" [min]="minT" [step]="stepT" [thumbLabel]="thumbLabel" [(ngModel)]="time"
-                (input)="onPeriodChange($event)">
+                (change)="onPeriodChange($event)">
             </mat-slider>
         </div>
     </div>

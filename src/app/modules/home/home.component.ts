@@ -38,6 +38,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.generateCurve();
     this.generateChart();
+
+    HC_exporting(Highcharts);
   }
 
   generateChart() {
@@ -61,13 +63,65 @@ export class HomeComponent implements OnInit {
       exporting: {
         enabled: true,
       },
+      xAxis: {
+        title: {
+          text: 'Time (in Years)'
+        }
+      },
+      yAxis: {
+        title: {
+          text: 'Concentration (Units)'
+        }
+      },
+      legend: {
+        enabled: false
+      },
       series: [{
         name: 'Concentration',
         data: this.y
       }]
     };
+  }
 
-    HC_exporting(Highcharts);
+  updateChart(y) {
+    this.chartOptions = {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Logistic Model'
+      },
+      subtitle: {
+        text: 'Concentration vs Time (in years) Model'
+      },
+      tooltip: {
+        split: true,
+      },
+      credits: {
+        text: '(C) Dipan Roy | All Rights Reserved',
+        href: 'https://www.DipanRoy.com'
+      },
+      exporting: {
+        enabled: true,
+      },
+      xAxis: {
+        title: {
+          text: 'Time (in Years)'
+        }
+      },
+      yAxis: {
+        title: {
+          text: 'Concentration (Units)'
+        }
+      },
+      legend: {
+        enabled: false
+      },
+      series: [{
+        name: 'Concentration',
+        data: y
+      }]
+    };
   }
 
   generateCurve() {
@@ -87,17 +141,20 @@ export class HomeComponent implements OnInit {
 
   onRateChange(event: MatSliderChange) {
     this.generateCurve();
-    this.generateChart();
+    // this.generateChart();
+    this.updateChart(this.y);
   }
 
   onPeriodChange(event: MatSliderChange) {
     this.generateCurve();
-    this.generateChart();
+    // this.generateChart();
+    this.updateChart(this.y);
   }
 
   onInitialChange(event){
     this.generateCurve();
-    this.generateChart();
+    // this.generateChart();
+    this.updateChart(this.y);
   }
 
 }
