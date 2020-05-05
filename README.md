@@ -1,6 +1,6 @@
-# Logistic Visualizer ![tech stack](http://img.shields.io/badge/Built_with-Angular_9-blue)
+# Logistic Visualizer
 
-[![beginner-friendly](https://img.shields.io/badge/beginner-friendly-tomato.svg?style=flat&logo=git)](https://github.com/dipan29/Logistic-Visualizer/issues) [![GitHub stars](https://img.shields.io/github/stars/dipan29/Logistic-Visualizer.svg?logo=github)](https://github.com/dipan29/Logistic-Visualizer/stargazers) [![GitHub forks](https://img.shields.io/github/forks/dipan29/Logistic-Visualizer.svg?logo=github&color=teal)](https://github.com/dipan29/Logistic-Visualizer/network) [![GitHub top language](https://img.shields.io/github/languages/top/dipan29/Logistic-Visualizer?color=yellow&logo=typescript)](https://github.com/dipan29/Logistic-Visualizer/)
+[![tech stack](http://img.shields.io/badge/Built_with-Angular_9-blue)] [![beginner-friendly](https://img.shields.io/badge/beginner-friendly-tomato.svg?style=flat&logo=git)](https://github.com/dipan29/Logistic-Visualizer/issues) [![GitHub stars](https://img.shields.io/github/stars/dipan29/Logistic-Visualizer.svg?logo=github)](https://github.com/dipan29/Logistic-Visualizer/stargazers) [![GitHub forks](https://img.shields.io/github/forks/dipan29/Logistic-Visualizer.svg?logo=github&color=teal)](https://github.com/dipan29/Logistic-Visualizer/network) [![GitHub top language](https://img.shields.io/github/languages/top/dipan29/Logistic-Visualizer?color=yellow&logo=typescript)](https://github.com/dipan29/Logistic-Visualizer/)
 
 Simple Visualization of the Logistic Function proposed by Pierre Verhulst in 1838  
 
