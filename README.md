@@ -30,4 +30,4 @@ Start the development server using ``ng serve``.
 
 [![GitHub followers](https://img.shields.io/github/followers/dipan29.svg?label=Follow%20@dipanr29&style=social)](https://github.com/dipan29/) [![Twitter](https://img.shields.io/twitter/follow/dipanr29?style=social)](https://twitter.com/dipanr29) 
 
-[![Crafted with ](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/dipan29/)
+[![Crafted with ](https://forthebadge.com/images/badges/built-with-Angular-love.svg)](https://github.com/dipan29/)
