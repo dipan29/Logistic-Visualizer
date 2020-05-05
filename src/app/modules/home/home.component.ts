@@ -159,19 +159,20 @@ export class HomeComponent implements OnInit {
     }
     for(t=0; t <= time; t++){
       for(i=t+1; i <= time; i++){
-        if((c[t] == c[i]) && (res.indexOf(c[t]) != -1)) {
-          res.push(c[t]);
+        if((c[t].toFixed(3)) == c[i].toFixed(3) && (res.indexOf(c[t].toFixed(3)) == -1)) {
+          res.push((c[i]).toFixed(3));
+          // console.log(res);
         }
       }
     }
-    console.log(res);
+
   }
 
   // Callers
   onRateChange(event: MatSliderChange) {
     this.generateCurve();
     // this.generateChart();
-    this.generateBiFurcations();
+    // Generate Bifurcations
     this.updateChart(this.y);
   }
 
