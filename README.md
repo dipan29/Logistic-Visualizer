@@ -10,10 +10,10 @@ The entire project does not use any logistic function pre-defined model but gene
 Contributions are welcomed to add features to this model.  
 Fork this repository and get started.  
 
-<hr />
+<hr /><center>
 
-#### If you found this work useful and interesting please leave a ⭐.
-<hr />
+### If you found this work useful and interesting please leave a ⭐.
+</center><hr />
 
 ### Coming Soon
 
