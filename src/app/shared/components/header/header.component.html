@@ -1,6 +1,24 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <mat-icon>multiline_chart</mat-icon>
+        <div (click)="home();">
+        <mat-icon class="logo">multiline_chart</mat-icon>
         <span>Logistic Model Visualizer</span>
+        </div>
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="about();">
+                            <mat-icon>help_outline</mat-icon>
+                            About
+                        </button>
+                    </mat-menu>
+
+                </li>
+            </ul>
+        </div>
     </mat-toolbar-row>
 </mat-toolbar>

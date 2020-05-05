@@ -13,12 +13,16 @@ HC_exporting(Highcharts);
 // x(n+1) = rx(n)[1 - x(n)]
 export class HomeComponent implements OnInit {
 
+  // Main Variables
   rate = 1;
   initial = 0.5;
-  time = 30;
+  time = 25;
 
   x = [];
   y = [];
+  // Bifurcations
+  r = [];
+  c = [];
 
   // Slider
   maxR = 5;
@@ -51,7 +55,7 @@ export class HomeComponent implements OnInit {
         text: 'Logistic Model'
       },
       subtitle: {
-        text: 'Concentration vs Time (in years) Model'
+        text: 'Please change any value to see the difference'
       },
       tooltip: {
         split: true,
@@ -70,7 +74,7 @@ export class HomeComponent implements OnInit {
       },
       yAxis: {
         title: {
-          text: 'Concentration (Units)'
+          text: 'Concentration (in Millions)'
         }
       },
       legend: {
@@ -89,10 +93,10 @@ export class HomeComponent implements OnInit {
         type: 'line'
       },
       title: {
-        text: 'Logistic Model'
+        text: 'Logistics Model'
       },
       subtitle: {
-        text: 'Concentration vs Time (in years) Model'
+        text: 'Concentration vs Time'
       },
       tooltip: {
         split: true,
@@ -111,7 +115,7 @@ export class HomeComponent implements OnInit {
       },
       yAxis: {
         title: {
-          text: 'Concentration (Units)'
+          text: 'Concentration (in Millions)'
         }
       },
       legend: {
@@ -138,10 +142,36 @@ export class HomeComponent implements OnInit {
     // console.log(this.y);
   }
   
+  generateBiFurcations(){
+    var i = 0;
+    this.r = []; this.c = [];
+    for(i = 0; i <= this.rate; i = i + 0.01){
+      this.getMeans(this.initial, 100, i);
+    }
+  }
 
+  getMeans(initial, time, rate){
+    var c = []; var t = 0; var i = 0;
+    var res = [];
+    c[0] =  initial;
+    for(t=0; t <= time; t++){
+      c[t] = rate * c[t-1] * ( 1 - c[t-1]);
+    }
+    for(t=0; t <= time; t++){
+      for(i=t+1; i <= time; i++){
+        if((c[t] == c[i]) && (res.indexOf(c[t]) != -1)) {
+          res.push(c[t]);
+        }
+      }
+    }
+    console.log(res);
+  }
+
+  // Callers
   onRateChange(event: MatSliderChange) {
     this.generateCurve();
     // this.generateChart();
+    this.generateBiFurcations();
     this.updateChart(this.y);
   }
 
