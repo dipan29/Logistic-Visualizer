@@ -3,7 +3,9 @@ Simple Visualization of the Logistic Function proposed by Pierre Verhulst in 183
 
 This project visualizes the Logistic Function Curve with respect to the initial concentration and rate provided.  
 There are various features of the logistic curve that can be observed as *Rate -> 3* and *Rate > 3*.  
-The entire project does not use any logistic function pre-defined model but generates on the go.  
+The entire project does not use any logistic function pre-defined model but generates on the go. 
+
+## Give it a Try -> [DEMO](https://logistic-visualizer.netlify.app/)
 
 ## Contributions Welcomed
 
