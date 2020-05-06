@@ -11,12 +11,14 @@ import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { AboutComponent } from 'src/app/modules/about/about.component';
+import { BifurcationsComponent } from 'src/app/modules/bifurcations/bifurcations.component';
 
 
 @NgModule({
   declarations: [
     DefaultComponent,
     HomeComponent,
+    BifurcationsComponent,
     AboutComponent
   ],
   imports: [

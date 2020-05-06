@@ -20,10 +20,6 @@ export class HomeComponent implements OnInit {
 
   x = [];
   y = [];
-  // Bifurcations
-  r = [];
-  c = []; // eq. concentration
-  dataChart2 = [];
 
   // Slider
   maxR = 5;
@@ -37,16 +33,12 @@ export class HomeComponent implements OnInit {
   //Charts
   chartOptions: {};
   Highcharts = Highcharts;
-  chartOptions2: {};
-  Highcharts2 = Highcharts;
 
   constructor() { }
 
   ngOnInit(): void {
     this.generateCurve();
     this.generateChart();
-    this.generateBifurcations();
-    this.generateBifurcationChart();
 
     HC_exporting(Highcharts);
   }
@@ -138,145 +130,15 @@ export class HomeComponent implements OnInit {
     };
   }
 
-  // For EqConc v Rate Chart
-  generateBifurcationChart() {
-    this.chartOptions2 = {
-      chart: {
-        type: 'scatter',
-        zoomType: 'xy'
-      },
-      title: {
-        text: 'Bifurcations Chart'
-      },
-      subtitle: {
-        text: 'Please change the Rate to see the difference'
-      },
-      tooltip: {
-        split: true,
-      },
-      credits: {
-        text: '(C) Dipan Roy | All Rights Reserved',
-        href: 'https://www.DipanRoy.com'
-      },
-      exporting: {
-        enabled: true,
-      },
-      xAxis: {
-        title: {
-          text: 'Rate'
-        }
-      },
-      yAxis: {
-        title: {
-          text: 'Equilibrium Concentration'
-        }
-      },
-      legend: {
-        enabled: false
-      },
-      plotOptions: {
-          scatter: {
-              marker: {
-                  radius: 1,
-                  states: {
-                      hover: {
-                          enabled: true,
-                          lineColor: 'rgb(100,100,100)'
-                      }
-                  }
-              },
-              states: {
-                  hover: {
-                      marker: {
-                          enabled: false
-                      }
-                  }
-              },
-              tooltip: {
-                  enabled: false,
-              }
-          }
-      },
-      series: [{
-        name: 'Bifurcations',
-        data: this.dataChart2
-      }]
-    };
-  }
-
-  updateBifurcationChart() {
-    this.chartOptions2 = {
-      chart: {
-        type: 'scatter',
-        zoomType: 'xy'
-      },
-      title: {
-        text: 'Bifurcations Chart'
-      },
-      subtitle: {
-        text: 'Rate vs Equilibrium Concentration'
-      },
-      tooltip: {
-        split: true,
-      },
-      credits: {
-        text: '(C) Dipan Roy | All Rights Reserved',
-        href: 'https://www.DipanRoy.com'
-      },
-      exporting: {
-        enabled: true,
-      },
-      xAxis: {
-        title: {
-          text: 'Rate'
-        }
-      },
-      yAxis: {
-        title: {
-          text: 'Equilibrium Concentration'
-        }
-      },
-      legend: {
-        enabled: false
-      },
-      plotOptions: {
-          scatter: {
-              marker: {
-                  radius: 1,
-                  states: {
-                      hover: {
-                          enabled: true,
-                          lineColor: 'rgb(100,100,100)'
-                      }
-                  }
-              },
-              states: {
-                  hover: {
-                      marker: {
-                          enabled: false
-                      }
-                  }
-              },
-              tooltip: {
-                  enabled: false,
-              }
-          }
-      },
-      series: [{
-        name: 'Bifurcations',
-        color: 'rgba(223, 83, 83, .5)',
-        data: this.dataChart2
-      }]
-    };
-  }
 
   // Required Functions
   getFinalConc(initial, rate, time) {
     var concentration = initial;
-    for(var i = 1; i <= time+this.getRandomInt(10); i++){
+    var fineTune = this.getRandomInt(10);
+    for(var i = 1; i <= time + fineTune; i++){
       concentration = concentration * rate * (1 - concentration);
     }
-    if(concentration < 0.00001)
+    if(concentration < 0.00001 && initial < 2)
       return 0;
     else
       return concentration;
@@ -297,49 +159,13 @@ export class HomeComponent implements OnInit {
     // console.log(this.y);
   }
 
-  generateBifurcations() {
-    this.r = []; this.c = [];
-    this.dataChart2 = []; // Reset Values
-    var start = 0.00; var increment = 0.001;
-    if (this.rate > 4) 
-      start = 2.79
-    else if (this.rate > 3)
-      start = 2.50;
-    else if (this.rate > 2)
-      start = 1.00;
-    else
-      start = 0.00;
-    for(var rate = start; rate <= this.rate; rate = rate + increment){
-      this.r.push(rate.toFixed(5));
-      var time = 100;
-      if (rate < 2)
-        time = 100;
-      else if (rate < 3)
-        time = 1000;
-      else if (rate < 4)
-        time = 10000;
-      else
-        time = 0;
-      var concentration = this.getFinalConc(this.initial, rate, time);
-      if(concentration > 0) {
-        this.c.push(concentration.toFixed(7));
-        this.dataChart2.push([rate,concentration]);
-      } else {
-        this.c.push(concentration);
-        this.dataChart2.push([rate,concentration]);
-      }
-    }
-    console.log(this.dataChart2);
-    // Draw Chart Function
-    this.updateBifurcationChart();
-  }
   
   // Callers
   onRateChange(event: MatSliderChange) {
     this.generateCurve();
     // this.generateChart();
     // Generate Bifurcations
-    this.generateBifurcations();
+    // this.generateBifurcations();
     this.updateChart(this.y);
   }
 

@@ -21,4 +21,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/');
   }
 
+  bifurcations(){
+    this.router.navigateByUrl('/bifurcations');
+  }
+
 }

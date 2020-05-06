@@ -11,12 +11,19 @@
                         <mat-icon>menu</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="home();">
+                            <mat-icon>home</mat-icon>
+                            Home
+                        </button>
+                        <button mat-menu-item (click)="bifurcations();">
+                            <mat-icon>timeline</mat-icon>
+                            Bifurcations
+                        </button>
                         <button mat-menu-item (click)="about();">
                             <mat-icon>help_outline</mat-icon>
                             About
                         </button>
                     </mat-menu>
-
                 </li>
             </ul>
         </div>

@@ -8,6 +8,8 @@ This project visualizes the Logistic Function Curve with respect to the initial 
 There are various features of the logistic curve that can be observed as *Rate -> 3* and *Rate > 3*.  
 The entire project does not use any logistic function pre-defined model but generates on the go. 
 
+**Chaos Map** (Bifurcations) have been added.  
+
 #### [DEMO](https://logistic-visualizer.netlify.app/) of the application.
 
 ## Contributions Welcomed
@@ -19,7 +21,7 @@ Fork this repository and get started.
 
 ### Features Coming Soon
 
-Chaotic Map and Bifurcations.
+Logistic Regression
 
 
 ## Quickly Getting Started
