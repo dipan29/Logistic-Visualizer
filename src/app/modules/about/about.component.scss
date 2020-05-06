@@ -11,6 +11,31 @@ sub{
     text-align: center;
 }
 
-.text-capitalize {
+.text-uppercase {
     text-transform: uppercase;
+}
+
+.visualhide{
+    display: none;
+}
+
+.characteristics li{
+    padding: 5px;
+}
+
+.texhtml{
+    font-style: italic;
+    padding-right: 2px;
+}
+
+.text-underline{
+    text-decoration: underline;
+}
+
+.text-bold{
+    font-weight: 500;
+}
+
+.text-italics{
+    font-style: italic;
 }

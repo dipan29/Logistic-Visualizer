@@ -25,4 +25,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/bifurcations');
   }
 
+  github(){
+    window.open('https://github.com/dipan29/Logistic-Visualizer/', "_blank");
+    // this.router.navigateByUrl('https://github.com/dipan29/Logistic-Visualizer/');
+  }
+
 }

@@ -1,11 +1,117 @@
 <div class="container">
     <h1 class="text-center">About Logistic Model</h1>
-    <p>Logistic model was developed by Belgian mathematician Pierre Verhulst (1838) who suggested that the rate of population increase may be limited, i.e., it may depend on population density :</p>
-    <p class="text-center"><strong>Z<sub>n+1</sub> = r Z<sub>n</sub> (1 - Z<sub>n</sub>)</strong>, where <strong>r</strong> is the Rate and <strong>Z<sub>n</sub></strong> is the concentration of <strong>n</strong><sup>th</sup> year.
+    <p>Logistic model was developed by Belgian mathematician Pierre Verhulst (1838) who suggested that the rate of
+        population increase may be limited, i.e., it may depend on population density :</p>
+    <p class="text-center" style="font-size: 1.2rem;"><strong>Z<sub>n+1</sub> = r Z<sub>n</sub> (1 -
+            Z<sub>n</sub>)</strong> ,</p>
+    <p class="text-center">where <strong>r</strong> is the Rate and <strong>Z<sub>n</sub></strong> is the concentration
+        of
+        <strong>n</strong><sup>th</sup> year.</p>
     <br />
-    <p>It is said that, this equation governs almost all the density (population, growth, etc.) in the universe. The curve generated on basis of the input parameters have some certain variations.</p>
-    <h2>Important Features : </h2>
 
+    <p>It is said that, this equation governs almost all the density (population, growth, etc.) in the universe. The
+        curve generated on basis of the input parameters have some certain variations.</p>
     <br />
-    <h2>Chaotic Map Coming Soon!</h2>
+    <h2 class="text-uppercase">Important Features : </h2>
+
+    <h3 class="text-bold">Logistic Map Behavior Dependency on <i>'r'</i> :</h3>
+
+    <div class="text-center"><img style="max-width: 760px;" width="80%" src="assets/map_1.gif" /><br /><i>Amplitude and
+            frequency content of some logistic map iterates for parameter values
+            ranging from 2 to 4</i><br /></div>
+
+    <ul class="characteristics">
+        <li>With <span class="texhtml mvar" style="font-style:italic;">r</span> between 0 and 1, the population will
+            eventually die, independent of the initial population.</li>
+        <li>With <span class="texhtml mvar" style="font-style:italic;">r</span> between 1 and 2, the population will
+            quickly approach the value <span class="texhtml"><span role="math" class="sfrac nowrap tion"
+                    style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+                        class="num" style="display:block; line-height:1em; margin:0 0.1em;"><i>r</i> − 1</span><span
+                        class="slash visualhide">/</span><span class="den"
+                        style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;"><i>r</i></span></span></span>,
+            independent of the initial population.</li>
+        <li>With <span class="texhtml mvar" style="font-style:italic;">r</span> between 2 and 3, the population will
+            also eventually approach the same value <span class="texhtml"><span role="math" class="sfrac nowrap tion"
+                    style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span
+                        class="num" style="display:block; line-height:1em; margin:0 0.1em;"><i>r</i> − 1</span><span
+                        class="slash visualhide">/</span><span class="den"
+                        style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;"><i>r</i></span></span></span>,
+            but first will fluctuate around that value for some time.</li>
+        <li>With <span class="texhtml mvar" style="font-style:italic;">r</span> between 3 and 1&nbsp;+&nbsp;<span
+                class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">6</span></span> ≈ 3.44949, from
+            almost all initial conditions the population will
+            approach permanent oscillations between two values. These two values are dependent on <span
+                class="texhtml mvar" style="font-style:italic;">r</span>.</li>
+        <li>With <span class="texhtml mvar" style="font-style:italic;">r</span> between 3.44949 and 3.54409
+            (approximately), from almost all initial conditions the population will approach permanent oscillations
+            among four values. </li>
+        <li>With <span class="texhtml mvar" style="font-style:italic;">r</span> increasing beyond 3.54409, from almost
+            all initial conditions the population will approach oscillations among 8 values, then 16, 32, etc. The
+            lengths of the parameter intervals that yield oscillations of a given length decrease rapidly; the ratio
+            between the lengths of two successive bifurcation intervals approaches the <a
+                href="https://wikipedia.org/wiki/Feigenbaum_constant" class="mw-redirect"
+                title="Feigenbaum constant">Feigenbaum constant</a>
+            <span class="texhtml"><i>δ</i> ≈ 4.66920</span>. This behavior is an example of a <a
+                href="https://wikipedia.org/wiki/Period-doubling_bifurcation"
+                title="Period-doubling bifurcation">period-doubling
+                cascade</a>.</li>
+        <li>At <span class="texhtml"><i>r</i> ≈ 3.56995</span> is the onset of chaos, at the end of the
+            period-doubling cascade. From almost all initial conditions, we no longer see oscillations of finite period.
+            Slight variations in the initial population yield dramatically different results over time, a prime
+            characteristic of chaos.</li>
+        <li>Beyond <span class="texhtml"><i>r</i> = 4</span>, almost all initial values eventually leave the interval
+            <span class="texhtml">[0,1]</span> and diverge.</li>
+    </ul>
+
+
+    <h3 class="text-bold">Bifurcation Diagram and <i>CHAOS</i> :</h3>
+    <div class="text-center"><img style="max-width: 480px" width="80%" src="assets/bifurcation_diagram_2.png" /><br /><i>Bifurcation Diagram of
+            Logistic Map</i><br /></div>
+    <br />
+    <p>In mathematics, particularly in dynamical systems, a bifurcation diagram shows the values visited or approached
+        asymptotically (fixed points, periodic orbits, or chaotic attractors) of a system as a function of a bifurcation
+        parameter in the system.</p>
+    <p>We plot an <strong>Equilibrium Concentration or Population Vs Rate</strong> graph for rate &lt; 4 that gives us
+        the Bifurcation Diagram for the logistic map. For <strong>r &gt; 3</strong>, we find that there are more than
+        one equilibrium concentration and the number of such points double after a certain amount of change in <i>r</i>.
+    </p>
+    <p>Here, <strong>bifurcations</strong> occur when there are more than one equilibrium points are found with respect
+        to the rate (r).</p>
+    <br />
+    <h3 class="text-bold">The onset of <i>CHAOS</i> :</h3>
+    <p>Beyond a growth rate of 3.6, however, the bifurcations ramp up until the system is capable of eventually landing
+        on any population value. This is known as the period-doubling path to chaos. As you adjust the growth rate
+        parameter upwards, the logistic map will oscillate between two then four then eight then 16 then 32 (and on and
+        on) population values. These are periods, just like the period of a pendulum.</p>
+
+    <p>By the time we reach growth rate 3.9, it has bifurcated so many times that the system now jumps, seemingly
+        randomly, between all population values. I only say seemingly randomly because it is definitely not random.
+        Rather, this model follows very simple deterministic rules yet produces apparent randomness. <strong>This is
+            chaos: deterministic and aperiodic.</strong></p>
+    <br /><br />
+    <h2 class="text-uppercase">More Reading and References :</h2>
+    <p class="text-italics">The above writing has direct citations from some of the following sources.</p>
+    <ul>
+        <li>
+            <p><a href="https://en.wikipedia.org/wiki/Logistic_map" title="Logistic Map">Wikipedia - Logistic Map</a></p>
+        </li>
+        <li>
+            <p><a href="https://www.youtube.com/watch?v=ovJcsL7vyrk" title="This equation will change how you see the world (the logistic map)">Veritasium</a></p>
+        </li>
+        <li>
+            <p><a href="https://geoffboeing.com/2015/03/chaos-theory-logistic-map/"
+                    title="Chaos Theory and the Logistic Map">Geoff Boeing</a>, Urban planning and spatial analysis
+                professor at USC</p>
+        </li>
+        <li>
+            <p><a href="https://en.wikipedia.org/wiki/Bifurcation_diagram" title="Bifurcation Diagram">Wikipedia - Bifurcation Diagram</a></p>
+        </li>
+    </ul>
+    <br/> <br/>
+    <h2 class="text-uppercase">About the Project :</h2>
+    <p>I made this project to visualize and show the beauty of this simple equation which fascinated me from the very first day I got to know this.</p>
+    <p class="text-italics">Do follow me, if you want to keep getting notifications about such projects &nbsp;<br/><br/>
+    <a href="https://github.com/dipan29"><img src="https://img.shields.io/github/followers/dipan29.svg?label=Follow%20@dipanr29&style=social"></a> &nbsp;
+    <a href="https://twitter.com/dipanr29"><img src="https://img.shields.io/twitter/follow/dipanr29?style=social"></a> </p>
+    <br/>
 </div>

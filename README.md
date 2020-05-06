@@ -10,7 +10,8 @@ The entire project does not use any logistic function pre-defined model but gene
 
 **Chaos Map** (Bifurcations) have been added.  
 
-#### [DEMO](https://logistic-visualizer.netlify.app/) of the application.
+#### [DEMO](https://logistic-visualizer.netlify.app/) of the application.  
+To know more about the project and understand various parts of the graphs, make sure to read the **(About Section)(https://logistic-visualizer.netlify.app/about)**.  
 
 ## Contributions Welcomed
 
